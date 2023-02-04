@@ -93,7 +93,7 @@ article {
 }
 
 .tasks {
-    font-family: "Inter", sans-serif;
+    font-family: sans-serif;
     color: red;
     display: flex;
     justify-content: space-between;

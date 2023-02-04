@@ -123,8 +123,8 @@ export default function Signed() {
                     </form>
                     {tasks.map((item, index) => (
                         <article key={item.id} className='tasks'>
-                            <p>{(index + 1) + ". "}  {item.task}</p>
-
+                            {/* <p>{(index + 1) + ". " + item.task}</p> */}
+                            <p>{(index + 1).toString().padStart(2, '0') + ". " + item.task}</p>
                             <div>
                                 <button onClick={() => editTask(item)} className='btn-edit'>Edit</button>
                                 <button onClick={() => deleteTask(item.id)} className='btn-delete'>Done</button>
