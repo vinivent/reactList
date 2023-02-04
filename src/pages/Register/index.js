@@ -53,7 +53,7 @@ export default function Register() {
             </div>
 
             <div className="container-login-form-btn">
-              <button className='login-form-btn' type='submit'>Login</button>
+              <button className='login-form-btn' type='submit'>Sign Up</button>
             </div>
             <div className="text-center">
               <span className="txt1">Already registered?</span>
