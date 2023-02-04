@@ -1,42 +1,119 @@
-.signed-container {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+.container-list {
+    width: 100%;
+    min-height: 100vh;
+
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    margin-top: 48px;
+    justify-content: center;
+
+    padding: 15px;
+
+    background-color: #111;
 }
 
-.signed-container h1 {
-    margin-bottom: 28px;
+.wrap-list {
+    width: 690px;
+    height: 500px;
+    background-color: #333;
+    border-radius: 10px;
+
+    overflow: hidden;
+    padding: 77px 55px 33px 55px;
+
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    overflow-y: scroll;
+}
+
+.list-form {
+    width: 100%;
+}
+
+.list-form-title {
+    display: block;
+    font-size: 28px;
+    color: azure;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.wrap-input {
+    width: 90%;
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin-bottom: 37px;
+    margin-right: 15px;
+}
+
+.text-and-button {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-task-form-btn {
+    margin-top: 20px;
 }
 
 .btn-register {
-    margin-bottom: 28px;
-}
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    color: #FFF;
+    line-height: 1.2;
+    text-transform: uppercase;
 
-.list {
-    width: 90%;
-    max-width: 600px;
     display: flex;
-    flex-direction: column;
-    background-color: rgba(18, 18, 18, 0.38);
-    border-radius: 4px;
-    margin-bottom: 12px;
     justify-content: center;
-    padding: 14px 8px;
+    align-items: center;
+
+    width: 105px;
+    height: 35px;
+
+    background: -webkit-linear-gradient(to right, #D62121, #3a1111);
+    background: -o-linear-gradient(to right, #D62121, #3a1111);
+    background: -moz-linear-gradient(to right, #D62121, #3a1111);
+    background: linear-gradient(to right, #D62121, #3a1111);
 }
 
-.list p {
-    margin-bottom: 8px;
+btn-register:hover {
+    cursor: pointer;
 }
 
-.list button {
-    margin-right: 8px;
-    border: 0;
-    border-radius: 4px;
-    padding: 4px;
+article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tasks {
+    font-family: "Inter", sans-serif;
+    color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 
 .btn-delete {
+    color: #ffcc23;
+    background-color: transparent;
+}
+
+.btn-edit {
+    margin-left: 5px;
+    margin-right: 5px;
     color: #ffcc23;
     background-color: transparent;
 }
@@ -58,4 +135,28 @@
 .btn-logout:hover {
     background-color: rgba(219, 38, 41, 1);
     color: #FFF;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(179, 177, 177);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(146, 50, 50);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(100, 100, 100);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgb(68, 68, 68);
+    border-radius: 10px;
 }

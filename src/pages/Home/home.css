@@ -1,16 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container {
-    width: 100%;
-    margin: 0 auto;
-}
-
 .container-login {
     width: 100%;
     min-height: 100vh;
@@ -103,10 +92,10 @@
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
 
-    background: -webkit-linear-gradient(to left, #21d4fd, #b721ff);
-    background: -o-linear-gradient(to left, #21d4fd, #b721ff);
-    background: -moz-linear-gradient(to left, #21d4fd, #b721ff);
-    background: linear-gradient(to left, #21d4fd, #b721ff);
+    background: -webkit-linear-gradient(to right, #D62121, #3a1111);
+    background: -o-linear-gradient(to right, #D62121, #3a1111);
+    background: -moz-linear-gradient(to right, #D62121, #3a1111);
+    background: linear-gradient(to right, #D62121, #3a1111);
 }
 
 .focus-input::after {
@@ -167,10 +156,10 @@
     width: 100%;
     height: 50px;
 
-    background: -webkit-linear-gradient(to left, #21d4fd, #b721ff);
-    background: -o-linear-gradient(to left, #21d4fd, #b721ff);
-    background: -moz-linear-gradient(to left, #21d4fd, #b721ff);
-    background: linear-gradient(to left, #21d4fd, #b721ff);
+    background: -webkit-linear-gradient(to right, #D62121, #3a1111);
+    background: -o-linear-gradient(to right, #D62121, #3a1111);
+    background: -moz-linear-gradient(to right, #D62121, #3a1111);
+    background: linear-gradient(to right, #D62121, #3a1111);
 }
 
 login-form-btn:hover {

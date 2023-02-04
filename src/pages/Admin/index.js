@@ -97,38 +97,43 @@ export default function Signed() {
                 setTaskInput('')
                 setEdit({})
             })
+
     }
 
     return (
-        <div className='signed-container'>
-            <h1>My tasks</h1>
+        <div className='container'>
+            <div className='container-list'>
+                <div className='wrap-list'>
+                    <form className="list-form" onSubmit={handleRegister}>
+                        <span className='list-form-title'>My tasks</span>
 
-            <form className='task-form' onSubmit={handleRegister}>
-                <textarea
-                    placeholder='Enter your task...'
-                    value={taskInput}
-                    onChange={(e) => setTaskInput(e.target.value)}
-                />
+                        <div className='text-and-button'>
+                            <div className='wrap-input'>
+                                <input className={taskInput !== "" ? 'has-value input' : 'input'} type="text" value={taskInput}
+                                    onChange={(e) => setTaskInput(e.target.value)} />
+                                <span className="focus-input" data-placeholder='Enter your task...'></span>
+                            </div>
+                            <div className='container-task-form-btn'>
+                                {Object.keys(edit).length > 0 ? (
+                                    <button className='btn-register' type='submit'>Update task</button>
+                                ) : (
+                                    <button className='btn-register' type='submit'>Add task</button>
+                                )}
+                            </div> </div>
+                    </form>
+                    {tasks.map((item, index) => (
+                        <article key={item.id} className='tasks'>
+                            <p>{(index + 1) + ". "}  {item.task}</p>
 
-                {Object.keys(edit).length > 0 ? (
-                    <button className='btn-register' type='submit'>Update task</button>
-                ) : (
-                    <button className='btn-register' type='submit'>Add task</button>
-                )}
-            </form>
-
-            {tasks.map((item) => (
-                <article key={item.id} className='list'>
-                    <p>{item.task}</p>
-
-                    <div>
-                        <button onClick={() => editTask(item)}>Edit</button>
-                        <button onClick={() => deleteTask(item.id)} className='btn-delete'>Done</button>
-                    </div>
-                </article>
-            ))}
-
-            <button className='btn-logout' onClick={handleLogout}>Logout</button>
+                            <div>
+                                <button onClick={() => editTask(item)} className='btn-edit'>Edit</button>
+                                <button onClick={() => deleteTask(item.id)} className='btn-delete'>Done</button>
+                            </div>
+                        </article>
+                    ))}
+                    <button className='btn-logout' onClick={handleLogout}>Logout</button>
+                </div>
+            </div>
         </div>
     )
 }
