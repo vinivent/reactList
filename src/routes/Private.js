@@ -1,11 +1,14 @@
-import { useState, useEffect } from 'react'
-import { auth } from '../firebaseConnection'
-import { onAuthStateChanged } from 'firebase/auth'
-import { Navigate } from 'react-router-dom'
+import { useState, useEffect } from "react";
+import { auth } from "../firebaseConnection";
+import { onAuthStateChanged } from "firebase/auth";
+import { Navigate } from "react-router-dom";
+
+import { HouseContext } from "./HouseContext";
+import { ImSpinner2 } from "react-icons/im";
 
 export default function Private({ children }) {
-  const [loading, setLoading] = useState(true);
-  const [signed, setSigned] = useState(false)
+  const [signed, setSigned] = useState(false);
+  const { loading } = useContext(HouseContext);
 
   useEffect(() => {
     async function checkLogin() {
@@ -14,30 +17,29 @@ export default function Private({ children }) {
           const userData = {
             uid: user.uid,
             email: user.email,
-          }
-          localStorage.setItem("@detailsUser", JSON.stringify(userData))
+          };
+          localStorage.setItem("@detailsUser", JSON.stringify(userData));
 
           setLoading(false);
-          setSigned(true)
-
+          setSigned(true);
         } else {
           setLoading(false);
-          setSigned(false)
+          setSigned(false);
         }
-      })
+      });
     }
     checkLogin();
-  }, [])
+  }, []);
 
   if (loading) {
     return (
-      <div></div>
-    )
+      <ImSpinner2 className="mx-auto animate-spin text-blue-800 text-4xl mt-[200px]" />
+    );
   }
 
   if (!signed) {
-    return <Navigate to='/' />
+    return <Navigate to="/" />;
   }
 
-  return children
+  return children;
 }
